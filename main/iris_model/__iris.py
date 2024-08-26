@@ -44,4 +44,12 @@ X_new=np.array([[5, 2.9, 1, 0.2]])
 y_predict=knn.predict(X_new)
 print("New predicition: {}".format(y_predict))
 print("New prediction name: {}".format(iris_dataset.target_names[y_predict]))
+## testing model using unseen data set
+y_new_predict=knn.predict(X_test)
+print("New prediction on new data: {}".format(y_new_predict))
+
+## checking model accuracy
+accuracy=knn.score(X_test,y_test)
+print("Model accuracy: {}".format(accuracy))
+
 
