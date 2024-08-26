@@ -33,6 +33,7 @@ X_train,X_test,y_train,y_test=train_test_split(iris_dataset['data'],iris_dataset
 print("X train data->{}".format(X_train.shape))
 print("X test data->{}".format(X_test.shape))
 
+#visualizing dataset features on scatter plot
 iris_dataframe=pd.DataFrame(X_train,columns=iris_dataset.feature_names)
 grr = pd.plotting.scatter_matrix(iris_dataframe, c=y_train, figsize=(15, 15), marker='o',
  hist_kwds={'bins': 20}, s=60, alpha=.8, cmap=mglearn.cm3)
@@ -44,6 +45,7 @@ X_new=np.array([[5, 2.9, 1, 0.2]])
 y_predict=knn.predict(X_new)
 print("New predicition: {}".format(y_predict))
 print("New prediction name: {}".format(iris_dataset.target_names[y_predict]))
+
 ## testing model using unseen data set
 y_new_predict=knn.predict(X_test)
 print("New prediction on new data: {}".format(y_new_predict))
